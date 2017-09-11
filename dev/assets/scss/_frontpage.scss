@@ -1,0 +1,388 @@
+.section{
+	&__work{
+		background-color: $white;
+		padding-bottom: 7rem;
+	}
+	&__portfolio{
+		padding-bottom: 5rem;
+	}
+	&__testimonials{
+		background-color: $white;
+		padding-bottom: 6rem;
+	}
+	&__clients{
+		background-color: $section_grey;
+		padding-bottom: 6rem;
+		text-align: center;
+	}
+	&__top-line{
+		height: 12px;
+		background-color: darken($section_grey, 8%);
+	}
+	&__bot-line{
+		text-align: center;
+		padding: 30Px 0;
+		background-color: darken($primary_color, 10%);
+	}
+	&__heading{
+		padding-top: 40px;
+		margin-bottom: 25px;
+		text-align: center;
+		color: $dark;
+		font-size: 2rem;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+		position: relative;
+		&::after{
+			position: absolute;
+			content: '';
+			bottom: -15px;
+			left: 50%;
+			transform: translateX(-50%);
+			height: 2px;
+			width: 45px;
+			background-color: $dark;
+		}
+		&--green{
+			color: darken($primary_color, 28%);
+			&::after{
+				background-color: darken($primary_color, 28%);
+			}
+		}
+	}
+	&__subheading{
+		text-align: center;
+		font-size: 1.5rem;
+		color: $grey;
+		margin-bottom: 60px;
+		&--green{
+			color: darken($primary_color, 15%);
+		}
+	}
+	&__button{
+		padding: 12px 25px 12px 25px;
+		line-height: 1;
+		font-family: $ProximaNovaRegular;
+		font-size: 1.8rem;
+		border-right: 20px;
+		position: relative;
+		opacity: .5;
+		will-change: transform;
+		transition: opacity $time ease, 
+		background-color $time ease, 
+		color $time ease;
+		&--arrow{
+			padding-right: 35px;
+			span{
+				display: block;
+				position: absolute;
+				top: 12px;
+				right: 10px;
+				height: 25px;
+				width: 25px;
+				overflow: hidden;
+				.fa{
+					position: absolute;
+					top: 0;
+					right: 0;
+					will-change: transform;
+					transition: transform $time ease;
+				}
+				.fa+.fa{
+					transform: translateX(-40px);
+					right: 5px;
+				}
+			}
+			&:hover{
+				.fa{
+					transform: translateY(40px);
+				}
+				.fa+.fa{
+					transform: translateX(0px);
+				}
+			}
+		}
+		&--green{
+			background-color: darken($primary_color, 15%);
+		}
+		&--grey{
+			background-color: darken($section_grey, 8%);
+			color: darken($section_grey, 50%);
+		}
+		&--shadow{
+			box-shadow: 0 2px 5px 2px  darken($primary_color, 15%);
+			text-transform: uppercase;
+			&:hover{
+				box-shadow: 0 2px 5px 2px rgba($white, .2);
+				transition: box-shadow $time ease;
+			}
+		}
+		&:hover{
+			background-color: $white;
+			color: $black;
+			opacity: 1;
+		}
+	}
+
+}
+
+.work{
+	&__item{
+		text-align: center;
+	}
+	&__icon{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		fill: $primary_color;
+		&-wrap{
+			height: 145px;
+			width: 145px;
+			margin: auto;
+			border-radius: 20px;
+			background-color: $icon_bg;
+			position: relative;
+		}
+	}
+	&__heading{
+		font-family: $ProximaNovaBold;
+		font-size: 2.4rem;
+		color: $dark;
+		padding: 25px 0 10px;
+	}
+	&__description{
+		font-size: 1.5rem;
+		color: $dark;
+		line-height: 1.5;
+		padding: 0 40px;
+	}
+	&__button{
+		font-family: $ProximaNovaBold;
+		font-size: 1.6rem;
+		padding: 8px 25px;
+		line-height: 1;
+		transition: background-color $time ease;
+		&:hover{
+			background-color: darken($primary_color, 10%);
+		}
+	}
+}
+.gallery{
+	&__heading{
+		font-size: 0;
+	}
+	&__button{
+		line-height: 1;
+		padding: 10px 20px;
+		color: $primary_color;
+		background-color: $white;
+		font-family: $ProximaNovaRegular;
+		font-size: 1.6rem;
+		transition: background-color $time ease, color $time ease;
+		&:hover,
+		&.active{
+			background-color: darken($primary_color, 15%);
+			color: $white;
+		}
+	}
+	&__content{
+		padding: 60px 0 30px;
+		font-size: 0;
+	}
+	&__image{
+		display: inline-block;
+		box-sizing: border-box;
+		margin: 0 15px 15px;
+		flex: 0 0 160px;
+		img{
+			border-radius: 5px;
+			border: 1px solid transparent;
+			transition: border .2s ease,
+			box-shadow .2s ease,
+			transform .2s ease;
+		}
+		&:hover{
+			img{
+				transform: translate(-1px, -1px);
+				border: 1px solid darken($primary_color, 15%);
+				box-shadow: 2px 2px 10px 0 $white; 
+			}
+		}
+	}
+}
+.testi{
+	text-align: center;
+	padding: 0 100px;
+	&__text{
+		font-family: $ProximaNovaRegular;
+		font-size: 1.6rem;
+	}
+}
+.author{
+	&__avatar{
+		height: 45px;
+		width: 45px;
+		border-radius: 50%;
+		border: 2px solid #cccccc;
+	}
+	&__info{
+		margin-left: 10px;
+		text-align-last: left;
+		line-height: 1;
+	}
+	&__name{
+		font-family: $ProximaNovaRegular;
+		font-size: 1.6rem;
+		color: $text_dark;
+	}
+	&__position{
+		font-family: $ProximaNovaBold;
+		font-size: 1.6rem;
+		color: #ccc;
+		margin-bottom: 0;
+	}
+}
+.clients{
+	&__logo{
+		flex: 0 0 250px;
+		margin-bottom: 5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		position: relative;
+		&--colored{
+			position: absolute;
+			opacity: 0;
+			transition: opacity $time ease;
+		}
+		&:hover{
+			.clients__logo--colored{
+				opacity: 1;
+			}
+		}
+	}
+}
+.team{
+	&__container{
+		padding-bottom: 6.5rem;
+	}
+	&__item{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		&:hover{
+			.vertical-line{
+				&::before{
+					height: 100%;
+				}
+			}
+			.team__avatar{
+				box-shadow: 0 1px 10px 0 $white;
+				transform: translateY(-1px);
+			}
+			.team__name{
+				&::before{
+					transform: scaleX(1);
+					transition-delay: $time;
+				}
+			}
+			.social{
+				background-color: $white;
+				transition: background-color $time ease;
+				transition-delay: $time;
+				&__icon{
+					&--behance{
+						color: #0061ff;
+					}
+					&--dribble{
+						color: #ea4c89;
+					}
+					&--twitter{
+						color: #00aced;
+					}
+				}
+			}
+
+		}
+	}
+	&__avatar{
+		width: 125px;
+		height: 125px;
+		background-color: $white;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: top center;
+		border-radius: 50%;
+		transition: box-shadow $time ease,
+		transform $time ease;
+	}
+	&__name{
+		font-family: $ProximaNovaRegular;
+		font-size: 1.6rem;
+		color: $white;
+		position: relative;
+		white-space: nowrap;
+		margin-bottom: 5px;
+		&::before{
+			position: absolute;
+			content: '';
+			top: 22px;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background-color: $white;
+			transform: scaleX(0);
+			transition: transform $time ease;
+
+		}
+	}
+}
+.vertical-line{
+	width: 2px;
+	height: 77px;
+	background-color: darken($primary_color, 28%);
+	margin: 10px 0;
+	position: relative;
+	&::before{
+		position: absolute;
+		content: '';
+		width: 100%;
+		height: 0;
+		background-color: $white;
+		top: 0;
+		left: 0;
+		transition: height $time ease;
+	}
+}
+.social{
+	font-size: 0;
+	background-color: rgba($white, .5);
+	border-radius: 20px;
+	cursor: pointer;
+	display: inline-block;
+	&__icon{
+		vertical-align: middle;
+		font-size: 2rem;
+		display: inline-block;
+		box-sizing: border-box;
+		margin: 2px 5px;
+		color: $dark;
+		transition: color $time ease;
+		&:hover{
+			
+			&.social__icon{
+				&--behance{
+					color: #0061ff;
+				}
+				&--dribble{
+					color: #ea4c89;
+				}
+				&--twitter{
+					color: #00aced;
+				}
+			}
+		}
+	}
+}

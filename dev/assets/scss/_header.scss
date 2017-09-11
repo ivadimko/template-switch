@@ -1,0 +1,170 @@
+.header {
+	background: url(../img/header_bg.jpg) no-repeat;
+	background-size: cover;
+	background-position: center center;
+	min-height: 200px;
+	height: 100vh;
+	position: relative;
+	&__top-line{
+		padding: 0 30px;
+	}
+	&__menu{
+		padding-top: 7px;
+		margin: auto auto auto 0;
+	}
+	&-menu{
+		&__item{
+			display: inline-block;
+			margin-left: 2rem;
+			padding: 0;
+			&:first-child{
+				margin-left: 0;
+			}
+		}
+		&__link{
+			font-family: $ProximaNovaRegular;
+			color: $white;
+			font-size: 1.6rem;
+			position: relative;
+			&::before{
+				position: absolute;
+				content: '';
+				top: -10px;
+				left: 0;
+				height: 5px;
+				width: 100%;
+				transform: scaleX(0);
+				will-change: transform;
+				background-color: $primary_color;
+				transition: transform $time ease;
+			}
+			&::after{
+				display: block;
+				content: attr(data-title);
+				font-weight: bold;
+				height: 1px;
+				color: transparent;
+				overflow: hidden;
+				visibility: visible;
+				margin-bottom: -1px;
+			}
+			&:hover{
+				font-weight: bold;
+				&::before{
+					transform: scaleX(1);
+				}
+			}
+		}
+	}
+	&__search{
+		margin: auto 0 auto auto;
+		position: relative;
+	}
+	&__logo{
+		position: absolute;
+		top: 5px;
+		left: 50%;
+		transform: translateX(-50%);
+		font-family: $NautilusPompiliusRegular;
+		color: $white;
+		font-size: 2.4rem;
+		transition: color $time ease;
+		&:hover{
+			color: $primary_color;
+		}
+	}
+	&__heading{
+		&-block{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, 0);
+			text-align: center;
+			line-height: 1;
+		}
+		&-text{
+			font-family: $MontserratBold;
+			font-size: 5.5rem;
+			color: $white;
+			white-space: nowrap;
+		}
+		&-button{
+			padding: 13px 27px;
+			margin-top: 40px;
+			border-radius: 30px;
+			text-transform: uppercase;
+			font-size: 2.2rem;
+			transition: background-color $time ease-out;
+			&:hover{
+				background-color: darken($primary_color, 10%);
+			}
+			
+		}
+	}
+	&__scroll-button{
+		position: absolute;
+		bottom: 12px;
+		left: 50%;
+		padding: 5px 33px 5px 15px;
+		background-color: $white;
+		transform: translateX(-50%);
+		font-family: $ProximaNovaLight;
+		color: $black;
+		font-size: 1.6rem;
+		overflow: hidden;
+		opacity: .6;
+		will-change: transform;
+		.fa{
+			position: absolute;
+			right: 12px;
+			top: 10px;
+			transition: transform $time ease-in-out;
+		}
+		.fa+.fa{
+			transform: translateY(-40px);
+			right: 15px;
+		}
+		&:hover{
+			opacity: 1;
+			transition: opacity $time ease;
+			.fa{
+				transform: translateY(40px);
+			}
+			.fa+.fa{
+				transform: translateY(0);
+			}
+		}
+	}
+}
+.search{
+	&__field{
+		border: none;
+		border-radius: 20px;
+		padding: 5px 10px;
+		color: $black;
+		font-family: $ProximaNovaLight;
+		@include placeholder($black, $ProximaNovaLight);
+		opacity: .8;
+		width: 210px;
+		transition: opacity $time ease, width $time ease;
+		&::-webkit-search-cancel-button {
+			-webkit-appearance: none;
+		}
+		&:focus{
+			opacity: 1;
+			width: 260px;
+			&+.search__icon{
+				opacity: 1;
+			}
+		}
+	}
+	&__icon{
+		position: absolute;
+		right: 10px;
+		top: 0;
+		opacity: .5;
+		color: $black;
+		transition: opacity $time ease;
+		cursor: pointer;
+	}
+}
