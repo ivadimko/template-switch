@@ -27,6 +27,7 @@ gulp.task('js', function() {
 		'./dev/assets/scripts/libs/modernizr/modernizr.js',
 		'./dev/assets/scripts/libs/vivus/dist/vivus.min.js',
 		'./dev/assets/scripts/libs/waypoints/lib/jquery.waypoints.min.js',
+		'./dev/assets/scripts/libs/mixitup/dist/mixitup.min.js',
 //-----------------------------------------------------------------
 		])
 	.pipe(concat('scripts.min.js'))

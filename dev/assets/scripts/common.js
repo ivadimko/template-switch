@@ -3,9 +3,20 @@ window.onload = () => {
 $(".testi").slick({
 	adaptiveHeight: true,
 });
+drawlogo();
 $('.header__scroll-button, .header-menu__link').click(function(){
 			var link = $(this).attr('href');
       $('html, body').animate({scrollTop:$(link).position().top}, 1000);
+});
+var mixer = mixitup('.gallery__content', {
+	animation: {
+		duration: 1000
+	}
+});
+$('.gallery__button').click(function(){
+	$('.gallery__button').removeClass('active');
+	$(this).addClass('active');
+	return false;
 });
 var workpoint = new Waypoint({
   element: document.getElementById('work'),
@@ -36,6 +47,16 @@ function mobileNav() {
 		burger[i].onclick = toggle;
 		};
 }
+function drawlogo() {
+	var logo = document.querySelector('.header__logo');
+	var mylogo = new Vivus(logo,{
+				type: 'oneByOne',
+				duration: 150,
+				animTimingFunction: Vivus.EASE
+	}, function doDone(obj) {
+    			obj.el.classList.add('finished');
+				});
+	}
 function drawsvg() {
 	var icons = document.querySelectorAll('.work__icon');
 	console.log(icons);
