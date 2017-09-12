@@ -24,6 +24,8 @@ gulp.task('js', function() {
 //-----------------------Include libraries-------------------------
 		'./dev/assets/scripts/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
 		'./dev/assets/scripts/libs/slick-carousel/slick/slick.min.js',
+		'./dev/assets/scripts/libs/modernizr/modernizr.js',
+		'./dev/assets/scripts/libs/vivus/dist/vivus.min.js',
 //-----------------------------------------------------------------
 		])
 	.pipe(concat('scripts.min.js'))

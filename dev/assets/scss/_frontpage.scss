@@ -129,13 +129,27 @@
 .work{
 	&__item{
 		text-align: center;
+		&:hover{
+			.work__icon{
+				fill: darken($primary_color, 10%);
+				transition: fill $time ease;
+			}
+		}
 	}
 	&__icon{
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+		fill-opacity: 0;
+		stroke-width: 2px;
+		transition: fill-opacity 1s ease,
+					stroke-width 1s ease;
 		fill: $primary_color;
+		&.finished{
+			fill-opacity: 1;
+			stroke-width: 0;
+		}
 		&-wrap{
 			height: 145px;
 			width: 145px;
