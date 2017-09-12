@@ -7,7 +7,13 @@ $('.header__scroll-button, .header-menu__link').click(function(){
 			var link = $(this).attr('href');
       $('html, body').animate({scrollTop:$(link).position().top}, 1000);
 });
-drawsvg();
+var workpoint = new Waypoint({
+  element: document.getElementById('work'),
+  handler: function(direction) {
+    drawsvg();
+  }
+})
+
 };
 
 //Mobile menu function

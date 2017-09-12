@@ -26,6 +26,7 @@ gulp.task('js', function() {
 		'./dev/assets/scripts/libs/slick-carousel/slick/slick.min.js',
 		'./dev/assets/scripts/libs/modernizr/modernizr.js',
 		'./dev/assets/scripts/libs/vivus/dist/vivus.min.js',
+		'./dev/assets/scripts/libs/waypoints/lib/jquery.waypoints.min.js',
 //-----------------------------------------------------------------
 		])
 	.pipe(concat('scripts.min.js'))
